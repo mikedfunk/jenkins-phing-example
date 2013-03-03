@@ -3,6 +3,6 @@
         "monolog/monolog": "1.4.*@dev"
     },
     "autoload": {
-        "psr-0": {"XulonPress": "src/"}
+        "psr-0": {"MikeFunk": "src/"}
     }
 }

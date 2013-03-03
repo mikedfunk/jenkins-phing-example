@@ -1,7 +1,7 @@
 <?php
-namespace XulonPress\Tests;
+namespace MikeFunk\Tests;
 
-use XulonPress\ChangeText;
+use MikeFunk\ChangeText;
 
 /**
  * test ChangeText class
@@ -22,7 +22,7 @@ class ChangeTextTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers XulonPress\ChangeText::change
+     * @covers MikeFunk\ChangeText::change
      */
     public function testChange()
     {
@@ -32,7 +32,7 @@ class ChangeTextTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException XulonPress\ChangeTextException
+     * @expectedException MikeFunk\ChangeTextException
      */
     public function testChangeException()
     {

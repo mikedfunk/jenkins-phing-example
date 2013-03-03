@@ -8,4 +8,4 @@
  */
 
 $loader = require_once __DIR__ . "/../vendor/autoload.php";
-$loader->add('XulonPress\\', __DIR__);
+$loader->add('MikeFunk\\', __DIR__);
