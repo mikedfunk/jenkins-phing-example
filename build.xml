@@ -10,10 +10,15 @@
   <delete dir="${basedir}/build/pdepend"/>
 
   <mkdir dir="${basedir}/build/api"/>
+  <chmod file="${basedir}/build/api" mode="0777" />
   <mkdir dir="${basedir}/build/code-browser"/>
+  <chmod file="${basedir}/build/code-browser" mode="0777" />
   <mkdir dir="${basedir}/build/coverage"/>
+  <chmod file="${basedir}/build/coverage" mode="0777" />
   <mkdir dir="${basedir}/build/logs"/>
+  <chmod file="${basedir}/build/logs" mode="0777" />
   <mkdir dir="${basedir}/build/pdepend"/>
+  <chmod file="${basedir}/build/pdepend" mode="0777" />
  </target>
 
  <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
