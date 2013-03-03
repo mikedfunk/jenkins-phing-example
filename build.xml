@@ -23,7 +23,7 @@
 
  <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
    <exec logoutput="true"
-         command="phpunit --configuration=phpunit.xml.dist" />
+         command="/usr/local/php5-20121123-183949/bin/phpunit --configuration=phpunit.xml.dist" />
  </target>
 
  <target name="parallelTasks" description="Run the pdepend, phpmd, phpcpd, phpcs, phpdoc and phploc tasks in parallel using a maximum of 2 threads.">
@@ -37,37 +37,37 @@
 
  <target name="pdepend" description="Generate jdepend.xml and software metrics charts using PHP_Depend">
   <exec logoutput="true"
-        command="pdepend --jdepend-xml=${basedir}/build/logs/jdepend.xml --jdepend-chart=${basedir}/build/pdepend/dependencies.svg --overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg ${source}" />
+        command="/usr/local/php5-20121123-183949/bin/pdepend --jdepend-xml=${basedir}/build/logs/jdepend.xml --jdepend-chart=${basedir}/build/pdepend/dependencies.svg --overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg ${source}" />
  </target>
 
  <target name="phpmd" description="Generate pmd.xml using PHPMD">
   <exec logoutput="true" spawn="true"
-        command="phpmd ${source} xml codesize,design,naming,unusedcode --reportfile ${basedir}/build/logs/pmd.xml" />
+        command="/usr/local/php5-20121123-183949/bin/phpmd ${source} xml codesize,design,naming,unusedcode --reportfile ${basedir}/build/logs/pmd.xml" />
  </target>
 
  <target name="phpcpd" description="Generate pmd-cpd.xml using PHPCPD">
   <exec logoutput="true"
-        command="phpcpd --log-pmd ${basedir}/build/logs/pmd-cpd.xml ${source}" />
+        command="/usr/local/php5-20121123-183949/bin/phpcpd --log-pmd ${basedir}/build/logs/pmd-cpd.xml ${source}" />
  </target>
 
  <target name="phploc" description="Generate phploc.csv">
   <exec logoutput="true"
-        command="phploc --log-csv ${basedir}/build/logs/phploc.csv ${source}" />
+        command="/usr/local/php5-20121123-183949/bin/phploc --log-csv ${basedir}/build/logs/phploc.csv ${source}" />
  </target>
 
  <target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
   <exec logoutput="true"
-        command="phpcs --report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=PSR2 --ignore=Exceptions.php,*_view.php ${source}" />
+        command="/usr/local/php5-20121123-183949/bin/phpcs --report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=PSR2 --ignore=Exceptions.php,*_view.php ${source}" />
  </target>
 
  <target name="phpdoc" description="Generate API documentation using PHPDocumentor">
   <exec logoutput="true"
-        command="apigen --source ${source} --destination ${basedir}/build/api" />
+        command="/usr/local/php5-20121123-183949/bin/apigen --source ${source} --destination ${basedir}/build/api" />
  </target>
 
  <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
   <exec logoutput="true"
-        command="phpcb --log ${basedir}/build/logs --source ${source} --output ${basedir}/build/code-browser" />
+        command="/usr/local/php5-20121123-183949/bin/phpcb --log ${basedir}/build/logs --source ${source} --output ${basedir}/build/code-browser" />
  </target>
 
  <target name="build" depends="clean,parallelTasks,phpunit,phpcb"/>
