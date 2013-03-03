@@ -26,6 +26,8 @@ class ChangeText
      * just changes spaces with dashes.
      *
      * @param string $text the input text with spaces
+     * @throws ChangeTextException if there are two exclamation points. This is
+     * just so I can practice doing @throws and @expectsException in the test.
      * @return string the changed text with dashes
      */
     public function change($text)
