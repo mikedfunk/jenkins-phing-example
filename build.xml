@@ -17,6 +17,11 @@
   <mkdir dir="${basedir}/build/pdepend"/>
  </target>
 
+ <target name="composer" description="Update composer packages with composer.phar">
+  <exec logoutput="true"
+        command="${php_bin_path}php composer.phar update" />
+ </target>
+
  <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
    <exec logoutput="true"
          command="${php_bin_path}phpunit --configuration=phpunit.xml.dist" />
@@ -66,6 +71,6 @@
         command="${php_bin_path}phpcb --log ${basedir}/build/logs --source ${source} --output ${basedir}/build/code-browser" />
  </target>
 
- <target name="build" depends="clean,parallelTasks,phpunit,phpcb"/>
+ <target name="build" depends="clean,composer,parallelTasks,phpunit,phpcb"/>
 
 </project>
