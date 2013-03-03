@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-  <testsuite name="ExampleProject" tests="2" assertions="2" failures="0" errors="0" time="0.015523">
-    <testsuite name="XulonPress\Tests\ChangeTextTest" file="/Library/WebServer/Documents/example_project/tests/ChangeTextTest.php" namespace="XulonPress\Tests" fullPackage="ExampleProject" package="ExampleProject" tests="2" assertions="2" failures="0" errors="0" time="0.015523">
-      <testcase name="testChange" class="XulonPress\Tests\ChangeTextTest" file="/Library/WebServer/Documents/example_project/tests/ChangeTextTest.php" line="27" assertions="1" time="0.012422"/>
-      <testcase name="testChangeException" class="XulonPress\Tests\ChangeTextTest" file="/Library/WebServer/Documents/example_project/tests/ChangeTextTest.php" line="37" assertions="1" time="0.003101"/>
-    </testsuite>
-  </testsuite>
-</testsuites>
