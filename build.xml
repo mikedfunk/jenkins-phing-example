@@ -1,7 +1,7 @@
 <project name="Quickbooks Audit" default="build" basedir=".">
  <property name="basedir" value="${project.basedir}" />
  <property name="source" value="${basedir}/src"/>
- <property name="phppath" value="/usr/local/php5-20121123-183949/bin/" />
+ <property name="php_bin_path" value="/usr/local/php5-20121123-183949/bin/" />
 
  <target name="clean" description="Clean up and create artifact directories">
   <delete dir="${basedir}/build/api"/>
@@ -24,7 +24,7 @@
 
  <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
    <exec logoutput="true"
-         command="${phppath}phpunit --configuration=phpunit.xml.dist" />
+         command="${php_bin_path}phpunit --configuration=phpunit.xml.dist" />
  </target>
 
  <target name="parallelTasks" description="Run the pdepend, phpmd, phpcpd, phpcs, phpdoc and phploc tasks in parallel using a maximum of 2 threads.">
@@ -38,37 +38,37 @@
 
  <target name="pdepend" description="Generate jdepend.xml and software metrics charts using PHP_Depend">
   <exec logoutput="true"
-        command="${phppath}pdepend --jdepend-xml=${basedir}/build/logs/jdepend.xml --jdepend-chart=${basedir}/build/pdepend/dependencies.svg --overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg ${source}" />
+        command="${php_bin_path}pdepend --jdepend-xml=${basedir}/build/logs/jdepend.xml --jdepend-chart=${basedir}/build/pdepend/dependencies.svg --overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg ${source}" />
  </target>
 
  <target name="phpmd" description="Generate pmd.xml using PHPMD">
   <exec logoutput="true" spawn="true"
-        command="${phppath}phpmd ${source} xml codesize,design,naming,unusedcode --reportfile ${basedir}/build/logs/pmd.xml" />
+        command="${php_bin_path}phpmd ${source} xml codesize,design,naming,unusedcode --reportfile ${basedir}/build/logs/pmd.xml" />
  </target>
 
  <target name="phpcpd" description="Generate pmd-cpd.xml using PHPCPD">
   <exec logoutput="true"
-        command="${phppath}phpcpd --log-pmd ${basedir}/build/logs/pmd-cpd.xml ${source}" />
+        command="${php_bin_path}phpcpd --log-pmd ${basedir}/build/logs/pmd-cpd.xml ${source}" />
  </target>
 
  <target name="phploc" description="Generate phploc.csv">
   <exec logoutput="true"
-        command="${phppath}phploc --log-csv ${basedir}/build/logs/phploc.csv ${source}" />
+        command="${php_bin_path}phploc --log-csv ${basedir}/build/logs/phploc.csv ${source}" />
  </target>
 
  <target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
   <exec logoutput="true"
-        command="${phppath}phpcs --report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=PSR2 --ignore=Exceptions.php,*_view.php ${source}" />
+        command="${php_bin_path}phpcs --report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=PSR2 --ignore=Exceptions.php,*_view.php ${source}" />
  </target>
 
  <target name="phpdoc" description="Generate API documentation using PHPDocumentor">
   <exec logoutput="true"
-        command="${phppath}apigen --source ${source} --destination ${basedir}/build/api" />
+        command="${php_bin_path}apigen --source ${source} --destination ${basedir}/build/api" />
  </target>
 
  <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
   <exec logoutput="true"
-        command="${phppath}phpcb --log ${basedir}/build/logs --source ${source} --output ${basedir}/build/code-browser" />
+        command="${php_bin_path}phpcb --log ${basedir}/build/logs --source ${source} --output ${basedir}/build/code-browser" />
  </target>
 
  <target name="build" depends="clean,parallelTasks,phpunit,phpcb"/>
