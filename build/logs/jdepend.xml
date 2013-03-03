@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PDepend>
+  <Packages>
+    <Package name="XulonPress">
+      <Stats>
+        <TotalClasses>3</TotalClasses>
+        <ConcreteClasses>3</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/Library/WebServer/Documents/example_project/src/XulonPress/ChangeText.php">ChangeText</Class>
+        <Class sourceFile="/Library/WebServer/Documents/example_project/src/XulonPress/Exceptions.php">ExampleProjectException</Class>
+        <Class sourceFile="/Library/WebServer/Documents/example_project/src/XulonPress/Exceptions.php">ChangeTextException</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package></Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+  </Packages>
+  <Cycles/>
+</PDepend>
