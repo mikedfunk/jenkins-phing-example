@@ -6,7 +6,10 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Psr\\Log\\' => $vendorDir . '/psr/log/',
-    'Monolog' => $vendorDir . '/monolog/monolog/src/',
+    'TokenReflection' => $vendorDir . '/andrewsville/php-token-reflection/./',
+    'Symfony\\Component\\Yaml' => $vendorDir . '/symfony/yaml/',
+    'Symfony\\Component\\Finder' => $vendorDir . '/symfony/finder/',
     'MikeFunk' => $baseDir . '/src/',
+    'FSHL' => $vendorDir . '/kukulich/fshl/./',
+    'ApiGen' => $vendorDir . '/apigen/apigen/./',
 );
