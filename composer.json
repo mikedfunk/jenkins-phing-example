@@ -1,16 +1,4 @@
 {
-    "require": {
-        "phpunit/phpunit": "3.7.*@dev",
-        "zerkalica/php-code-browser": "dev-master",
-        "apigen/apigen": "2.8.0",
-        "squizlabs/php_codesniffer": "1.4.4",
-        "symfony/finder": "2.1.*@dev",
-        "zetacomponents/console-tools": "dev-master",
-        "theseer/fdomdocument": "dev-master",
-        "sebastian/finder-facade": "1.0.6",
-        "phploc/phploc": "dev-master",
-        "phpmd/phpmd": "dev-master"
-    },
     "autoload": {
         "psr-0": {"MikeFunk": "src/"}
     }
